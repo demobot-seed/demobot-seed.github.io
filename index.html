@@ -177,6 +177,16 @@
     ]
   }
   </script>
+
+  <!-- KaTeX CSS for styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMVIARBEGMLggdeBWMwPjgteJsemEojLWEgbdcKD8evaAPFAo" crossorigin="anonymous">
+
+  <!-- KaTeX JavaScript library -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+  <!-- KaTeX auto-render extension to find and render math automatically -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
 </head>
 <body>
 
@@ -186,53 +196,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 
   <main id="main-content">
   <section class="hero">
@@ -322,18 +285,13 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser image-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
+      <img src="static/images/overview.jpg" type="image/jpg" alt="Description of the image">
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        The DemoBot framework for learning bimanual skills from a single visual demonstration. (a) The Data Processing Module converts a raw RGB-D video into structured motion priors in three steps: (1) A human demonstration is recorded and manually segmented with keyframes. (2) Hand and object estimators produce 3D hand and object poses, which are then refined using task-aware optimization. (3) The refined human motion is retargeted to the robot, generating a full-body trajectory that is split into meaningful temporal segments based on the keyframes. (b) The Corrective Residual RL Module then uses these segments as motion priors. The RL agent learns a corrective policy that outputs a residual action, $\Delta a$,  which is added to the motion priors, $a = a_{demo} + \Delta a$, allowing the robot to master the contact-rich physical dynamics absent from the original visual data and complete the task. 
       </h2>
     </div>
   </div>
@@ -341,21 +299,13 @@
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            This work presents DemoBot, a learning framework that enables a dual-arm, multi-finger robotic system to acquire complex manipulation skills from a single unannotated RGB-D video demonstration. The method extracts structured motion trajectories of both hands and objects from raw video data. 
-            These trajectories serve as motion priors for a novel reinforcement learning (RL) pipeline that learns to refine them through contact-rich interactions, thereby eliminating the need to learn from scratch. To address the challenge of learning long-horizon manipulation skills, we introduce: 
-            (1) Temporal-segment based RL to enforce temporal alignment of the current state with demonstrations; (2) Success-Gated Reset strategy to balance the refinement of readily acquired skills and the exploration of subsequent task stages; and (3) Event-Driven Reward curriculum with adaptive thresholding to guide the RL learning of high-precision manipulation. 
-            The novel video processing and RL framework successfully achieved long-horizon synchronous and asynchronous bimanual assembly tasks, offering a scalable approach for direct skill acquisition from human videos.
-          </p>
-        </div>
-      </div>
+    <div class="hero-body">
+      <img src="static/images/overview.jpg" type="image/jpg" alt="Description of the image">
+      <h2 class="subtitle has-text-centered">
+        The DemoBot framework for learning bimanual skills from a single visual demonstration. (a) The Data Processing Module converts a raw RGB-D video into structured motion priors in three steps: (1) A human demonstration is recorded and manually segmented with keyframes. (2) Hand and object estimators produce 3D hand and object poses, which are then refined using task-aware optimization. (3) The refined human motion is retargeted to the robot, generating a full-body trajectory that is split into meaningful temporal segments based on the keyframes. (b) The Corrective Residual RL Module then uses these segments as motion priors. The RL agent learns a corrective policy that outputs a residual action, \(\Delta a\),  which is added to the motion priors, \(a = a_{demo} + \Delta a\), allowing the robot to master the contact-rich physical dynamics absent from the original visual data and complete the task. 
+      </h2>
     </div>
   </div>
 </section>
