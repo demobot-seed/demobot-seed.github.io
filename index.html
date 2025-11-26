@@ -286,7 +286,7 @@
 
 
 
-<!-- Paper abstract -->
+<!-- Paper teaser -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -297,7 +297,54 @@
     </div>
   </div>
 </section>
+<!-- End Paper teaser -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light" style="padding: 2rem 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content has-text-justified" style="margin-bottom: 0; line-height: 1.6;">
+          
+          <p>This work presents DemoBot, a learning framework that enables a dual-arm, multi-finger robotic system to acquire complex manipulation skills from a single unannotated RGB-D video demonstration. The method extracts structured motion trajectories of both hands and objects from raw video data. These trajectories serve as motion priors for a novel reinforcement learning (RL) pipeline that learns to refine them through contact-rich interactions, thereby eliminating the need to learn from scratch. To address the challenge of learning long-horizon manipulation skills, we introduce: (1) Temporal-segment based RL to enforce temporal alignment of the current state with demonstrations; (2) Success-Gated Reset strategy to balance the refinement of readily acquired skills and the exploration of subsequent task stages; and (3) Event-Driven Reward curriculum with adaptive thresholding to guide the RL learning of high-precision manipulation. The novel video processing and RL framework successfully achieved long-horizon synchronous and asynchronous bimanual assembly tasks, offering a scalable approach for direct skill acquisition from human videos.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- End paper abstract -->
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Data processing module</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="item item-video2">
+            <!-- TODO: Add poster image for better preview -->
+            <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+              <!-- Your video file here -->
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content has-text-justified is-size-5" style="margin-top: 2rem;">
+              <p>
+                This video demonstrates <strong>DemoBot</strong>, a framework for efficient learning of bimanual manipulation tasks using dexterous hands. 
+                The system leverages human video demonstrations to generate corrective residual reinforcement learning policies, allowing the robot to perform complex tasks such as reorienting and inserting objects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Image carousel -->
