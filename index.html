@@ -335,8 +335,9 @@
           </div>
           <div class="content has-text-justified is-size-5" style="margin-top: 2rem;">
               <p>
-                This video demonstrates <strong>DemoBot</strong>, a framework for efficient learning of bimanual manipulation tasks using dexterous hands. 
-                The system leverages human video demonstrations to generate corrective residual reinforcement learning policies, allowing the robot to perform complex tasks such as reorienting and inserting objects.
+                This video demonstrates the workflow of the data processing module of <strong>DemoBot</strong>, which is designed to extract and refine hand-object motion priors from the visual demonstration. 
+                This module leverages hand pose estimator and object pose estimator individually and later align the estimations into the same coordinate system. 
+                Additionally, a task specific object pose refinement module is designed to improve the accuracy of object pose for tasks that require high-precision, e.g. insertion task. 
               </p>
             </div>
           </div>
