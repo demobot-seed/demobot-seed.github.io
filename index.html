@@ -348,47 +348,85 @@
 </section>
 
 
-<!-- Image carousel -->
+
+
+
+<!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3">Residual corrective RL results -- Simulation</h2>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/sim-task1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/sim-task2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/sim-task3.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="content has-text-justified is-size-5" style="margin-top: 2rem;">
+            <p>
+              These videos show the results of the policy learned with our residual corrective RL module in IsaacLab simulator. As it can be clearly seen from these videos, the extracted hand-object motion priors are sub-optimal, which is inevitable, as the critical physical contact information between hands and objects can not be recorded by the visual demos. 
+              Thus, we designed this residual corrective RL module to learn and compensate this crucial missing part by interacting with physical simulation. The core idea behind this module is straightforward: The robot has to learn how to grasp and manipulate the objects correctly so that it can reproduce the object motions as human did in the demonstration. 
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End video carousel -->
 
 
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Residual corrective RL results -- Real-world setup</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/real-task1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/real-task2.mp4" type="video/mp4">
+          </video>
+        </div>
+        
+
+        <div class="content has-text-justified is-size-5" style="margin-top: 2rem;">
+            <p>
+              These videos show the results of the policy learned with our residual corrective RL module on real-world setup. Limited by the hardware, we can only demonstrate the sim-to-real transferrability of the learning policy with a single-arm robot.
+              In these experiments, the policy is trained in simulation but with several domain randomization tricks applied, including the one to simulate the non-ideal behavior of real-world actuators. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
 
 
 <!-- Youtube video -->
@@ -412,58 +450,23 @@
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+<!-- Paper abstract -->
+<section class="section hero is-light" style="padding: 2rem 0.5rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Conclusion</h2>
+        <div class="content has-text-justified" style="margin-bottom: 0; line-height: 1.6;">
+          
+          <p>In summary, this study serves as a pioneer for developing an effective framework for learning bimanual dexterous manipulation skills from arbitrary internet video, which is validated through extensive experiments in both simulation and real-world setup. Such a framework demonstrates its effectiveness at a system-level of engineering and integration, using techniques ranging from visual-based hand reconstruction, object pose estimation, to a novel demo-augmented residual reinforcement learning. </p>
+          <p>Moreover, this work presents a significant step toward scalable robot learning. By extracting motion priors from a single, imperfect human video, DemoBot bypasses the data bottleneck of teleoperation. Our results demonstrate that combining suboptimal motion priors with residual RL enables robots to master contact-rich, long-horizon tasks—problems that are intractable for RL from scratch due to exploration complexity, yet too costly for imitation learning due to data requirements. This paradigm opens the door to leveraging internet-scale video data, moving us closer to general-purpose robots capable of acquiring new dexterous skills by simply `watching' humans.</p>
+          
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+<!-- End paper abstract -->
 
 
 
